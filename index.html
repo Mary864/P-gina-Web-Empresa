@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a Nuestra Empresa</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#courses">Cursos</a></li>
+                <li><a href="#news">Noticias</a></li>
+                <li><a href="#publications">Publicaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="about">
+        <h2>Sobre Nosotros</h2>
+        <img src="empresa.jpg" alt="Foto de la Empresa">
+        <p>Somos una empresa dedicada a la educación, impartiendo cursos en varias disciplinas.</p>
+    </section>
+
+    <!-- Sección Formulario de Contacto -->
+    <section id="contact">
+        <h2>Formulario de Contacto</h2>
+        <form id="contactForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <label>
+                <input type="checkbox" id="privacyPolicy">
+                Acepto la política de privacidad
+            </label>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="formMessage"></p>
+    </section>
+
+    <!-- Sección Cursos -->
+    <section id="courses">
+        <h2>Cursos que Impartimos</h2>
+        <ul>
+            <li>Lengua</li>
+            <li>Matemáticas</li>
+            <li>Física</li>
+            <li>Química</li>
+            <li>Inglés</li>
+            <li>Francés</li>
+        </ul>
+    </section>
+
+    <!-- Sección Noticias -->
+    <section id="news">
+        <h2>Noticias</h2>
+        <div id="newsSlider">
+            <!-- Aquí se rotarán las noticias -->
+            <div class="news-item">
+                <img src="noticia1.jpg" alt="Noticia 1">
+                <p>Noticia 1</p>
+            </div>
+            <div class="news-item">
+                <img src="noticia2.jpg" alt="Noticia 2">
+                <p>Noticia 2</p>
+            </div>
+            <div class="news-item">
+                <img src="noticia3.jpg" alt="Noticia 3">
+                <p>Noticia 3</p>
+            </div>
+            <div class="news-item">
+                <img src="noticia4.jpg" alt="Noticia 4">
+                <p>Noticia 4</p>
+            </div>
+            <div class="news-item">
+                <img src="noticia5.jpg" alt="Noticia 5">
+                <p>Noticia 5</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Publicaciones -->
+    <section id="publications">
+        <h2>Publicaciones</h2>
+        <img src="periodico.jpg" alt="Publicaciones">
+        <form id="publicationsForm">
+            <label for="pdf">Subir PDF de nueva publicación:</label>
+            <input type="file" id="pdf" name="pdf" accept="application/pdf">
+            <button type="submit">Subir</button>
+        </form>
+        <p id="uploadMessage"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nuestra Empresa</p>
+    </footer>
+
+    <script src="web.js"></script>
+</body>
+</html>
