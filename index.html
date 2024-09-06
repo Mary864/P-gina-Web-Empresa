@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Bienvenidos a Nuestra Empresa</h1>
+        <h1>Bienvenidos a la Empresa Grupo Académico Alhambra</h1>
         <nav>
             <ul>
                 <li><a href="#about">Sobre Nosotros</a></li>
@@ -20,10 +20,25 @@
         </nav>
     </header>
 
+    <button id="openChat" class="chat-button">👋 Habla con Sara</button>
+    <div id="chatBox" class="chat-box">
+        <div class="chat-header">
+            <span>Sara - Tu Asistente Virtual</span>
+            <button id="closeChat" class="close-button">×</button>
+        </div>
+        <div class="chat-content">
+            <p>¡Hola! Soy Sara, tu asistente virtual. ¿Cómo puedo ayudarte hoy?</p>
+            <textarea id="userInput" placeholder="Escribe tu pregunta aquí..."></textarea>
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+
+    <script src="web.js"></script>
+
     <!-- Sección Sobre Nosotros -->
     <section id="about">
         <h2>Sobre Nosotros</h2>
-        <img src="empresa.jpg" alt="Foto de la Empresa">
+        <img src="fotoempresa.jpg" alt="Foto de la Empresa">
         <p>Somos una empresa dedicada a la educación, impartiendo cursos en varias disciplinas.</p>
     </section>
 
@@ -50,6 +65,121 @@
         <p id="formMessage"></p>
     </section>
 
+    <title>Test de Nivel de Inglés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Sección Test de Inglés -->
+    <h1>Test de Nivel de Inglés (B1)</h1>
+    <form id="testForm">
+        <div class="question">
+            <p>1. Choose the correct sentence:</p>
+            <input type="radio" name="q1" value="1"> He go to school every day.<br>
+            <input type="radio" name="q1" value="0"> He goes to school every day.<br>
+            <input type="radio" name="q1" value="0"> He going to school every day.<br>
+        </div>
+        <div class="question">
+            <p>2. What is the past form of "go"?</p>
+            <input type="radio" name="q2" value="0"> Goed<br>
+            <input type="radio" name="q2" value="1"> Went<br>
+            <input type="radio" name="q2" value="0"> Goes<br>
+        </div>
+        <div class="question">
+            <p>3. Choose the correct sentence:</p>
+            <input type="radio" name="q3" value="0"> I has a dog.<br>
+            <input type="radio" name="q3" value="1"> I have a dog.<br>
+            <input type="radio" name="q3" value="0"> I am have a dog.<br>
+        </div>
+        <div class="question">
+            <p>4. Complete the sentence: "I __________ at 8 AM every day."</p>
+            <input type="radio" name="q4" value="1"> wake up<br>
+            <input type="radio" name="q4" value="0"> wakes up<br>
+            <input type="radio" name="q4" value="0"> waking up<br>
+        </div>
+        <div class="question">
+            <p>5. What is the plural form of "child"?</p>
+            <input type="radio" name="q5" value="1"> Children<br>
+            <input type="radio" name="q5" value="0"> Childs<br>
+            <input type="radio" name="q5" value="0"> Childrens<br>
+        </div>
+        <div class="question">
+            <p>6. Choose the correct sentence:</p>
+            <input type="radio" name="q6" value="1"> She is a good teacher.<br>
+            <input type="radio" name="q6" value="0"> She are a good teacher.<br>
+            <input type="radio" name="q6" value="0"> She am a good teacher.<br>
+        </div>
+        <div class="question">
+            <p>7. What is the comparative form of "good"?</p>
+            <input type="radio" name="q7" value="1"> Better<br>
+            <input type="radio" name="q7" value="0"> Gooder<br>
+            <input type="radio" name="q7" value="0"> More good<br>
+        </div>
+        <div class="question">
+            <p>8. Complete the sentence: "They __________ football every weekend."</p>
+            <input type="radio" name="q8" value="0"> plays<br>
+            <input type="radio" name="q8" value="1"> play<br>
+            <input type="radio" name="q8" value="0"> playing<br>
+        </div>
+        <div class="question">
+            <p>9. Which sentence is correct?</p>
+            <input type="radio" name="q9" value="0"> She don't like pizza.<br>
+            <input type="radio" name="q9" value="1"> She doesn't like pizza.<br>
+            <input type="radio" name="q9" value="0"> She doesn't likes pizza.<br>
+        </div>
+        <div class="question">
+            <p>10. What is the past form of "have"?</p>
+            <input type="radio" name="q10" value="0"> Haved<br>
+            <input type="radio" name="q10" value="1"> Had<br>
+            <input type="radio" name="q10" value="0"> Has<br>
+        </div>
+
+        <button type="button" onclick="checkTest()">Enviar</button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        function checkTest() {
+            const form = document.getElementById('testForm');
+            const resultDiv = document.getElementById('result');
+            let score = 0;
+
+            // Iterar sobre las respuestas y sumar los puntos si son correctas
+            for (let i = 1; i <= 10; i++) {
+                const question = form['q' + i];
+                if (question.value === '1') {
+                    score++;
+                }
+            }
+
+            // Mostrar el resultado según la puntuación
+            if (score >= 5) {
+                resultDiv.textContent = 'Tiene usted el nivel B1. Aciertos: ' + score + '/10';
+                resultDiv.style.color = 'green';
+            } else {
+                resultDiv.textContent = 'No tiene usted el nivel B1. Aciertos: ' + score + '/10';
+                resultDiv.style.color = 'red';
+            }
+        }
+    </script>
+
     <!-- Sección Cursos -->
     <section id="courses">
         <h2>Cursos que Impartimos</h2>
@@ -69,23 +199,23 @@
         <div id="newsSlider">
             <!-- Aquí se rotarán las noticias -->
             <div class="news-item">
-                <img src="noticia1.jpg" alt="Noticia 1">
+                <img src="1725537957312FdezPachecoAutentica.jpg" alt="Noticia 1">
                 <p>Noticia 1</p>
             </div>
             <div class="news-item">
-                <img src="noticia2.jpg" alt="Noticia 2">
+                <img src="1725537141255ASanzDelegadosGobiernoESTANDAR.jpg" alt="Noticia 2">
                 <p>Noticia 2</p>
             </div>
             <div class="news-item">
-                <img src="noticia3.jpg" alt="Noticia 3">
+                <img src="1725535557230JoseManuelQuinteroest.jpg" alt="Noticia 3">
                 <p>Noticia 3</p>
             </div>
             <div class="news-item">
-                <img src="noticia4.jpg" alt="Noticia 4">
+                <img src="1725533538355LorcayGranadaGeneralifest.jpg" alt="Noticia 4">
                 <p>Noticia 4</p>
             </div>
             <div class="news-item">
-                <img src="noticia5.jpg" alt="Noticia 5">
+                <img src="1702322399008premios ComunicacionEst.jpg" alt="Noticia 5">
                 <p>Noticia 5</p>
             </div>
         </div>
@@ -94,15 +224,53 @@
     <!-- Sección Publicaciones -->
     <section id="publications">
         <h2>Publicaciones</h2>
-        <img src="periodico.jpg" alt="Publicaciones">
-        <form id="publicationsForm">
-            <label for="pdf">Subir PDF de nueva publicación:</label>
-            <input type="file" id="pdf" name="pdf" accept="application/pdf">
-            <button type="submit">Subir</button>
-        </form>
-        <p id="uploadMessage"></p>
-    </section>
+        
+        <img src="gente-negocios-dandose-mano_53876-13391.avif" alt="Publicaciones">
+        
+        <p>AQUÍ PUEDES VER NUESTRAS PUBLICACIONES</p>
+        <p>Reseña y comentario crítico normativa estatal</p>
+        
+        <!-- Incrustar el PDF directamente en la página -->
+        <embed src="resena_critica.pdf" type="application/pdf" width="100%" height="600px" />
 
+        <p>Nueva Ley sobre la Eutanasia</p>
+
+         <!-- Incrustar el PDF directamente en la página -->
+         <embed src="BOE-A-2021-4628.pdf" type="application/pdf" width="100%" height="600px" />
+
+         <p>Nueva Ley sobre la Igualdad</p>
+
+         <!-- Incrustar el PDF directamente en la página -->
+         <embed src="BOE-A-2019-3244-consolidado.pdf" type="application/pdf" width="100%" height="600px" />
+        
+    </section>
+    
+    <script>
+        // Capturar el formulario y el input de PDF
+        const form = document.getElementById('publicationsForm');
+        const pdfInput = document.getElementById('pdf');
+        const pdfPreview = document.getElementById('pdfPreview');
+        const uploadMessage = document.getElementById('uploadMessage');
+    
+        // Cuando se sube un archivo
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+    
+            const file = pdfInput.files[0];
+    
+            if (file && file.type === "application/pdf") {
+                const fileURL = URL.createObjectURL(file); // Crear una URL temporal para mostrar el PDF
+                
+                // Mostrar el PDF en el visor
+                pdfPreview.src = fileURL;
+                pdfPreview.style.display = 'block';
+                uploadMessage.textContent = 'PDF subido con éxito';
+            } else {
+                uploadMessage.textContent = 'Por favor, sube un archivo PDF válido.';
+                pdfPreview.style.display = 'none';
+            }
+        });
+    </script>
     <footer>
         <p>&copy; 2024 Nuestra Empresa</p>
     </footer>
