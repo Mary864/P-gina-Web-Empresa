@@ -1,3 +1,14 @@
+document.getElementById('openChat').addEventListener('click', function() {
+    document.getElementById('chatBox').classList.add('open');
+});
+
+document.getElementById('closeChat').addEventListener('click', function() {
+    document.getElementById('chatBox').classList.remove('open');
+});
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Formulario de contacto
     const contactForm = document.getElementById('contactForm');
